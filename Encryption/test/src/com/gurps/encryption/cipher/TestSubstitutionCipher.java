@@ -12,7 +12,7 @@ public class TestSubstitutionCipher {
     SubstitutionCipher cipher = new SubstitutionCipher();
     String encryptedMessage = cipher.encrypt(message);
     
-    assertEquals("9(6^13#13#16^.24$16^19(13#5%.", encryptedMessage);
+    assertEquals("9(6^13#13#16^*9124$16^19(13#5%*91", encryptedMessage);
   }
 
 }

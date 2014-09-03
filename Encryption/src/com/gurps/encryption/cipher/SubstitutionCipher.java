@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Very basic substitution cipher that simply replaces each character in a string with another
- * string. If the character is not found then it substitutes a period instead. 
+ * String. If the character is not found then it substitutes a '*91' instead.
  * 
  * @author gurps.bassi
  *
@@ -46,8 +46,8 @@ public class SubstitutionCipher {
   public String encryptChar(char c){
     String cipherChar = substitutionMap.get((c + "").toUpperCase());
     if(cipherChar == null){
-      //default to period.
-      cipherChar = ".";
+      //default to *91.
+      cipherChar = "*91";
     }
     
     return cipherChar;
