@@ -43,6 +43,15 @@ public class SubstitutionCipher {
     substitutionMap.put("Z", "27&");
 }
       
+  public String encryptChar(char c){
+    String cipherChar = substitutionMap.get((c + "").toUpperCase());
+    if(cipherChar == null){
+      //default to period.
+      cipherChar = ".";
+    }
+    
+    return cipherChar;
+  }
   
   public String encrypt(String message){
     if(message == null || message.length() == 0){
@@ -50,15 +59,8 @@ public class SubstitutionCipher {
     }
     
     StringBuilder output = new StringBuilder();
-    for(int i = 0; i < message.length(); i ++){
-      String cipherChar = substitutionMap.get(message.substring(i, i+1).toUpperCase());
-      if(cipherChar == null){
-        //default to period.
-        cipherChar = ".";
-      }
-      output.append(cipherChar);
-    }
     
+    message.chars().forEach(i -> output.append(encryptChar((char)i)));
     return output.toString();
   }
 }
